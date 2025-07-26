@@ -67,6 +67,7 @@ public class CommentService {
 
         return commentRepository.save(reply);
     }
+    @Transactional
     public void deleteCommentById(Long commentId) {
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new NotFoundException("Komentar sa id-em = " + commentId + " ne postoji."));
