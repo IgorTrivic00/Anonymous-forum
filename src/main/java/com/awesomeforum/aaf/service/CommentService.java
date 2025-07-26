@@ -30,7 +30,7 @@ public class CommentService {
         this.userRepository = userRepository;
         this.usernameHelper=usernameHelper;
     }
-@Transactional
+    @Transactional
     public Comment createComment(CommentRequest request) {
     User user= usernameHelper.getUser(request.user().getUsername(),request.user().getProfilePicture());
         Post post = postRepository.findById(request.postId())
@@ -47,7 +47,7 @@ public class CommentService {
     }
 
 
-
+    @Transactional
     public Comment replyToComment(ReplyToCommentRequest request) {
         User user= usernameHelper.getUser(request.user().getUsername(),request.user().getProfilePicture());
 

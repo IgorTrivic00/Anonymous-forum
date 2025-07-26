@@ -14,7 +14,7 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    @Transactional
+
     public void updateProfilePicture(Long id, String newUrl) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Korisnik sa id-em '" + id + "' ne postoji."));
